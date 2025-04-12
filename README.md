@@ -29,9 +29,17 @@ server.listen( 7373, () => {
 # 支持的事件列表
 * message - 聊天栏消息事件，返回消息对象(EventChatMsg)，可用event.message.type 检测是玩家聊天还是退出或进入，启用指令转发后可用于检测不存在的命令
 * chat - 聊天事件
-* player_join - 玩家进入
-* player_leave - 玩家退出
+* player\_join - 玩家进入
+* player\_leave - 玩家退出
+* tick - 服务器REST启动后每t(enableTick中自定义，默认为1000(ms))在执行一次，返回TickEvent对象，无依赖，需要启用tick事件  
+调用VRestServer对象的enableTick以启动tick事件
+* connect - 启用tick后当服务器rest可以被请求则执行该事件，返回TickEvent对象
+* disconnect - 词面意思
+
+# TRModule 目录
+本目录为TRC扩展功能列表，非依赖库
 
 # TODO 正在整
-* 增加更多类和tick
+* 完善Tick事件
+* 增加更多类
 * 增加更多功能
